@@ -1,0 +1,56 @@
+This is the test file for the module 0-add_integer.py.
+
+First importing the method from the module:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Testing:
+
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(-3, 1)
+-2
+
+>>> add_integer(5, 5)
+10
+
+>>> add_integer(2.5, 3.2)
+5
+
+>>> add_integer(8.8, 3.5)
+11
+
+>>> add_integer(4.2, 7)
+11
+
+>>> add_integer(5.6 , 5)
+10
+
+>>> add_integer("b", 5)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer(7)
+105
+
+>>> add_integer("b")
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+>>> add_integer()
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+>>> add_integer(float("inf"))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float("NaN"))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer

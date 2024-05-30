@@ -1,0 +1,54 @@
+HTTPS:
+Les données échangées via HTTPS sont cryptées grâce à SSL/TLS, rendant les informations illisibles pour les personnes non autorisées.
+
+HTTP:
+Les données échangées via HTTP ne sont pas cryptées, ce qui signifie que toute personne interceptant la communication peut lire le contenu.
+
+Méthodes HTTP courantes :
+
+GET
+
+Description : Récupère des données du serveur.
+Cas d'utilisation : Charger une page web ou récupérer des données d'une API.
+
+POST
+
+Description : Envoie des données au serveur.
+Cas d'utilisation : Soumettre un formulaire ou envoyer des données à une API.
+
+PUT
+
+Description : Remplace les données à l'emplacement spécifié par les nouvelles données envoyées.
+Cas d'utilisation : Mettre à jour un enregistrement existant dans une base de données via une API.
+
+DELETE
+
+Description : Supprime les données à l'emplacement spécifié.
+Cas d'utilisation : Supprimer un enregistrement d'une base de données via une API.
+
+
+Codes d'état HTTP courants
+200 OK
+
+Description : La requête a réussi.
+Scénario : Lorsqu'une page web ou une ressource est récupérée avec succès.
+
+301 Moved Permanently
+
+Description : La ressource demandée a été déplacée de manière permanente à une nouvelle URL.
+Scénario : Redirection permanente d'une ancienne URL vers une nouvelle.
+
+404 Not Found
+
+Description : La ressource demandée est introuvable sur le serveur.
+Scénario : Lorsqu'un utilisateur tente d'accéder à une page qui n'existe pas.
+
+500 Internal Server Error
+
+Description : Le serveur a rencontré une condition inattendue qui l'a empêché de traiter la requête.
+Scénario : Erreur générique du serveur, souvent due à un problème dans le code du serveur.
+
+403 Forbidden
+
+Description : Le serveur a compris la requête, mais refuse de l'autoriser.
+Scénario : Accès refusé à une ressource pour laquelle l'utilisateur n'a pas les permissions nécessaires.

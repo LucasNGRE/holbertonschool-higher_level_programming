@@ -1,0 +1,19 @@
+test file for the module 7-base_geometry.py
+
+First importing the method from the module:
+-------------------------------------------
+
+>>> integer_validator = __import__('7-base_geometry').BaseGeometry.integer_validator
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test with good input:
+
+>>> print(BaseGeometry.integer_validator(BaseGeometry, "b", 1))
+True
+
+Test with no interger:
+
+>>> print(BaseGeometry.integer_validator(BaseGeometry, "b", "a"))
+Traceback (most recent call last):
+    ...
+TypeError: b must be an integer

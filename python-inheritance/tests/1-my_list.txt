@@ -1,0 +1,56 @@
+test file for the module 1-my_list.py.
+
+First importing the method from the module:
+-------------------------------------------
+
+>>> print_sorted = __import__('1-my_list').MyList.print_sorted
+>>> MyList = __import__('1-my_list').MyList
+
+>>> new = print_sorted([1, 4, 2, 3, 5])
+[1, 2, 3, 4, 5]
+
+Testing check instanciation:
+
+>>> my_list = MyList([1, 4, 2, 3, 5])
+>>> new = print_sorted(my_list)
+[1, 2, 3, 4, 5]
+
+Testing check inherits from list:
+
+>>> print(issubclass(MyList, list))
+True
+
+Testing the __str__:
+
+>>> print("__str__" in MyList.__dict__)
+False
+
+Testing with negative number
+
+>>> new = print_sorted([1, 4, -2, 3, 5])
+[-2, 1, 3, 4, 5]
+
+Testing append():
+
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> new = my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+Testing with empty list:
+
+>>> new = MyList.print_sorted([])
+[]
+>>> print(new)
+[]
+
+Testing check print_sorted() returns a new list:
+
+>>> new = print_sorted([1, 2, 4, 6])
+[1, 2, 4, 6]
+>>> isinstance(new, list)
+True

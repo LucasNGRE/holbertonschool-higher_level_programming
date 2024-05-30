@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+from flask import Flask
+from flask import jsonify
+from flask import request
+import json
+
+
+users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
+         "lucas": {"name": "Lucas", "age": 25, "city": "Rodez"}}
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    message = "Welcome to the Flask API!"
+    return (message)
+
+
+@app.route("/data")
+def data():
+    usernames = list(users.keys())
+    return jsonify(usernames)
+
+
+@app.route("/status")
+def status():
+    return "OK"
+
+
+@app.route("/users/<username>")
+def get_users(username):
+    if username in users:
+        return jsonify(users[username])
+
+
+@app.route("/add_user", methods=["POST"])
+def add_user():
+    if not request.json or "username" in request.json:
+        return jsonify({"error": "Missing username or JSON data"}), 400
+    user_data = request.json
+    username = user_data["username"]
+    if username in users:
+        return jsonify({"error": "User already exists"}), 400
+    users[username] = {
+        "name": user_data.get("name"),
+        "age": user_data.get("age"),
+        "city": user_data.get("city")
+    }
+    return jsonify({"message": "User added", "user": users[username]}), 201
+
+
+if __name__ == "__main__":
+    app.run()

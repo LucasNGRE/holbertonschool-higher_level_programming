@@ -1,0 +1,33 @@
+This is the test file for the module 4-print_square.txt
+
+First importing the method from the module:
+-----------------------------------------
+
+>>> print_square = __import__('4-print_square').print_square
+
+Testing size with integer:
+
+>>> print_square(2)
+##
+##
+
+Testing with a letter:
+
+>>> print_square("a")
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer
+
+Testing with a negative number:
+
+>>> print_square(-2)
+Traceback (most recent call last):
+    ...
+TypeError: size must be >= 0
+
+Testing with a float:
+
+>>> print_square(2.5)
+Traceback (most recent call last):
+    ...
+TypeError: size must be an integer

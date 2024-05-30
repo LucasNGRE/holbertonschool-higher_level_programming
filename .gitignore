@@ -1,0 +1,16 @@
+*-main.py
+__pycache__
+add_0.py
+calculator_1.py
+variable_load_5.py
+main_00_abc.py
+main_01_duck_typing.py
+main_02_verboselist.py
+main_03_countediterator.py
+main_04_flyingfish.py 
+main_05_dragon.py
+*_*_*.txt
+*.json
+*.pkl
+*.csv
+main_*_*.py
