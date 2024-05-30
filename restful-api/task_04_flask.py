@@ -36,7 +36,7 @@ def get_users(username):
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
-    if not request.json or "username" in request.json:
+    if not request.json or "username" not in request.json:
         return jsonify({"error": "Missing username or JSON data"}), 400
     user_data = request.json
     username = user_data["username"]
