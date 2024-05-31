@@ -5,8 +5,7 @@ from flask import request
 import json
 
 
-users = {"jane": {"username": "jane","name": "Jane", "age": 28, "city": "Los Angeles"},
-         "lucas": {"username": "lucas", "name": "Lucas", "age": 25, "city": "Rodez"}}
+users = {}
 
 app = Flask(__name__)
 
