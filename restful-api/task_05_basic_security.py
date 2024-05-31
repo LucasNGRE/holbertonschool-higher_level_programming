@@ -58,8 +58,7 @@ def login():
         return jsonify({"message": "Missing username or password"}), 400
     user = users.get(username)
     if user and check_password_hash(user["password"], password):
-        access_token = create_access_token(identity={'username': username,
-                                                     'role': user['role']})
+        access_token = create_access_token(identity=username)
         return jsonify(access_token=access_token), 200
     else:
         return jsonify({"message": "Bad username or password"}), 401
