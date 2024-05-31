@@ -32,6 +32,7 @@ def verify_password(username, password):
     user = users.get(username)
     if user and check_password_hash(user["password"], password):
         return username
+    return None
 
 
 @app.route("/")
@@ -72,7 +73,6 @@ def login():
 @app.route("/jwt-protected")
 @jwt_required()
 def jwt_protected():
-    verify_jwt_in_request()
     return "JWT Auth: Access Granted"
 
 
