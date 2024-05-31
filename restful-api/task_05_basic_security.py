@@ -46,11 +46,6 @@ def basic_protected():
     return "Basic Auth: Access Granted"
 
 
-@auth.error_handler
-def unauthorized():
-    return jsonify({"error": "Unauthorized access"}), 401
-
-
 app.config["JWT_SECRET_KEY"] = "holberton"
 jwt = JWTManager(app)
 
