@@ -5,8 +5,8 @@ from flask import request
 import json
 
 
-users = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"},
-         "lucas": {"name": "Lucas", "age": 25, "city": "Rodez"}}
+users = {"jane": {"username": "jane","name": "Jane", "age": 28, "city": "Los Angeles"},
+         "lucas": {"username": "lucas", "name": "Lucas", "age": 25, "city": "Rodez"}}
 
 app = Flask(__name__)
 
@@ -37,7 +37,7 @@ def get_users(username):
 @app.route("/add_user", methods=["POST"])
 def add_user():
     if not request.json or "username" not in request.json:
-        return jsonify({"error": "Missing username or JSON data"}), 400
+        return jsonify({"error": "User not found"}), 400
     user_data = request.json
     username = user_data["username"]
     if username in users:
