@@ -1,5 +1,5 @@
--- Creates the table 'force_name' with columns 'id' and 'value'
+-- Creates the table 'force_name' with columns 'id' and 'name'
 CREATE TABLE IF NOT EXISTS force_name (
     id INT,
-    VALUE VARCHAR(256) NOT NULL
+    name VARCHAR(256) NOT NULL
 );
