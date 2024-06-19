@@ -31,7 +31,6 @@ if __name__ == "__main__":
                    "ORDER BY cities.id ASC", (state_name,))
     rows = cursor.fetchall()
     for row in rows:
-        print(row)
-
+        print(row[0], end=", " if row != rows[-1] else "\n")
     cursor.close()
     db.close()
