@@ -30,7 +30,9 @@ if __name__ == "__main__":
                    "WHERE states.name = %s "
                    "ORDER BY cities.id ASC", (state_name,))
     rows = cursor.fetchall()
-    for row in rows:
-        print(row[0], end=", " if row != rows[-1] else "\n")
+    if rows:
+        print(", ".join(row[0] for row in rows))
+    else:
+        print("")
     cursor.close()
     db.close()
