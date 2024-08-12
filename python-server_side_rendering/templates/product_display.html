@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Product Display</title>
 </head>
 <body>
-    {% include 'header.html' %}
     <h1>Product List</h1>
     {% if error %}
         <p>{{ error }}</p>
@@ -28,6 +28,5 @@
             </tbody>
         </table>
     {% endif %}
-    {% include 'footer.html' %}
 </body>
 </html>
